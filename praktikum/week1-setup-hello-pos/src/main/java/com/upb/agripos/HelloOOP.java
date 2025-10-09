@@ -1,22 +1,34 @@
-class Greeter {
-    private String name;
-    private String nim;
-    private String kelas;
+// HelloOOP.java
 
-    public Greeter(String name, String nim, String kelas) {
-        this.name = name;
-        this.nim = nim;
-        this.kelas = kelas;
-    }
+class Produk {
 
-    public void sayHello() {
-        System.out.println("Hello World, I am " + name + " - " + nim + " from " + kelas);
+    String nama;
+    int harga;
+
+    Produk(String nama, int harga) {
+        this.nama = nama;
+        this.harga = harga;
     }
 }
 
 public class HelloOOP {
+
     public static void main(String[] args) {
-        Greeter greeter = new Greeter("Irwandi Isnugroho", "240202867", "3IKKA");
-        greeter.sayHello();
+        String nim = "240202867";
+        String namaMhs = "Irwandi isnugroho";
+        Produk[] daftar = {
+            new Produk("Beras", 10000),
+            new Produk("Pupuk", 15000),
+            new Produk("Benih", 12000)
+        };
+        int total = 0;
+        System.out.println("Hello POS World");
+        System.out.println("NIM: " + nim + ", Nama: " + namaMhs);
+        System.out.println("Daftar Produk:");
+        for (Produk p : daftar) {
+            System.out.println("- " + p.nama + ": " + p.harga);
+            total += p.harga;
+        }
+        System.out.println("Total harga semua produk: " + total);
     }
 }
